@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:id="@+id/tab1Layout" 
+	android:orientation="vertical">
+
+<TableLayout 
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:stretchColumns="1">
+
+		<EditText
+		    android:id="@+id/naamVeld"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ems="10"
+		    android:inputType="textPersonName"
+		    android:hint="Naam" />
+
+		<EditText
+		    android:id="@+id/opdrachtVeld"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ems="10"
+		    android:inputType="textPersonName"
+		    android:hint="Opdracht" />
+
+		<EditText
+		    android:id="@+id/ipAdressVeld"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ems="10"
+		    android:inputType="textPersonName"
+		    android:hint="Ip" />
+
+		<EditText
+		    android:id="@+id/poortNummerVeld"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ems="10"
+		    android:hint="Poortnummer" 
+		    android:inputType="phone">
+
+		    <requestFocus />
+		</EditText>
+
+		<RelativeLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" >
+		</RelativeLayout>
+
+		<Button
+		    android:id="@+id/button1"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="Verzenden"
+		    android:onClick="VerstuurBericht" />
+
+	</TableLayout>
+</RelativeLayout>
