@@ -30,6 +30,9 @@ public class MainActivity extends Activity implements OnClickListener
 
 	}
 
+	//wanneer er op de knop geklikt word;
+	//gegevens uit de tekstvelden ophalen en omzetten naar string
+	//vervolgens doorsturen naar de serverCommunicator
 	public void onClick(View src) 
 	{
 		EditText naamEditText = (EditText) this.findViewById(R.id.naamVeld); 

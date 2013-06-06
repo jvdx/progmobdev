@@ -1,6 +1,6 @@
-/*
- * Author : ErVaLt / techwavedev.com
- * Description : TabLayout Andorid App
+/* Jan van Dijk
+ * s1070923
+ * INF2C
  */
 package com.example.tablayout;
 

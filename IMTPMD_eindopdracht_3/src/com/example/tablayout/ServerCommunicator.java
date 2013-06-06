@@ -1,3 +1,8 @@
+/* Jan van Dijk
+ * s1070923
+ * INF2C
+ */
+
 package com.example.tablayout;
 
 import java.io.BufferedReader;
@@ -32,21 +37,18 @@ public class ServerCommunicator implements Runnable
 	private String serverBericht;
 	public ServerCommunicator( Activity activity, String naam, String vraag, String ip, int poort )
 	{
-		//we gebruiken de activity om de userinterface te updaten
 		this.activity = activity;
-		//gegevens om naar de server te verbinden en een message te sturen
 		this.naam = naam;
 		this.vraag = vraag;
 		this.ip = ip;
 		this.poort = poort;
-		//de nieuwe thread kan tekst verzenden en ontvangen van en naar een server
+		
+		//nieuwe thread maken en starten
 		this.setThread(new Thread(this));
 		getThread().start();
 	}
 
-	//dit is een methode die niet op de UI thread wordt aangeroepen, maar door onze eigen nieuwe thread
-	//we kunnen dus niet zomaar ontvangen berichten in een userinterface object stoppen m.b.v. view.setText( message )
-	//hier gebruiken we de activity voor: activity.runOnUiThread( activity )
+	//de thread
 	@Override
 	public void run()
 	{
@@ -80,7 +82,6 @@ public class ServerCommunicator implements Runnable
 						{
 							try {
 								opdracht =  array.get( i );
-								//activity.setReceivedServerMessage( opdracht.toString() );
 								serverBericht = opdracht.toString();
 								
 							} catch (JSONException e) {
@@ -106,7 +107,7 @@ public class ServerCommunicator implements Runnable
 		}
 	}
 
-	//ook deze methoden kunnen niet naar de UI direct communiceren, hou hier rekening mee
+	//verzenden vna het bericht
 	private void sendMessage( String message, Socket socket )
 	{
 		DataOutputStream dataOutputStream = null;

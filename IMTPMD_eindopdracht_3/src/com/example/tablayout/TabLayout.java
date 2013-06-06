@@ -18,8 +18,8 @@ public class TabLayout extends TabActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Resources res = getResources(); // Resource object to get Drawables
-		TabHost tabHost = getTabHost(); // The activity TabHost
+		Resources res = getResources();
+		TabHost tabHost = getTabHost();
 
 		Intent intent = new Intent(this, Opdr_listview.class);
 		tabHost.addTab(tabHost
@@ -32,9 +32,10 @@ public class TabLayout extends TabActivity {
 				.setIndicator("Invoerscherm", res.getDrawable(R.drawable.icon))
 				.setContent(intent2));
 				
+		//tab openen wanneer de app start
 		tabHost.setCurrentTab(1);
 		
-		// Set tabs Colors
+		// kleuren van tabs
 		tabHost.setBackgroundColor(Color.BLACK);
 		tabHost.getTabWidget().setBackgroundColor(Color.BLACK);
 
